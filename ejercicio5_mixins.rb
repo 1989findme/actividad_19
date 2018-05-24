@@ -2,17 +2,18 @@ module Herviboro
     DEFINIR = 'Sólo me alimento de vegetales!'
 
     def dieta
-        "Soy un Herviboro!"
+        puts "Soy un Herviboro!"
     end
 end
 
 class Animal
     def saludar
-        "Soy un animal!"
+        puts "Soy un animal!"
     end
 end
 
-class Conejo < Animal < Herviboro
+class Conejo < Animal
+    include Herviboro#Los modulos se incluyen así
     def initialize(name)
         @name = name
     end
@@ -21,7 +22,33 @@ end
 conejo = Conejo.new('Bugs Bunny')
 conejo.saludar
 conejo.dieta
-Herviboro::DEFINIR
+puts Herviboro::DEFINIR
+
+
+# module Herviboro
+#     DEFINIR = 'Sólo me alimento de vegetales!'
+#
+#     def dieta
+#         "Soy un Herviboro!"
+#     end
+# end
+#
+# class Animal
+#     def saludar
+#         "Soy un animal!"
+#     end
+# end
+#
+# class Conejo < Animal < Herviboro
+#     def initialize(name)
+#         @name = name
+#     end
+# end
+#
+# conejo = Conejo.new('Bugs Bunny')
+# conejo.saludar
+# conejo.dieta
+# Herviboro::DEFINIR
 
 
 # Transformar la clase Herviboro en un módulo. Implementar el módulo en la clase Conejo
